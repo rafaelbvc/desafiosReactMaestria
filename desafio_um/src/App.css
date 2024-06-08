@@ -1,0 +1,11 @@
+.minha_escolha_btn {
+  padding: 10px;
+  background-color: rgb(62, 91, 119);
+
+  border-radius: 10px;
+}
+
+.text_btn {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
