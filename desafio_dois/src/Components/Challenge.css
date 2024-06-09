@@ -1,0 +1,13 @@
+span {
+    color: blueviolet;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: larger;
+  }
+
+  .imprimir_valores_btn {
+    margin-top: 5vh;
+    background-color: aquamarine;
+    border-radius: 8px;
+    padding: 4px;
+    font-size: medium;
+}
