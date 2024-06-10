@@ -1,0 +1,13 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: rgb(50, 6, 94);
+    letter-spacing: 3;
+}
+
