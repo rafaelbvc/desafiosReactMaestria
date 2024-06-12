@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import "./App.css";
 import { wordsList } from "./data/words";
 import StartScreen from "./components/StartScreen";
@@ -13,6 +13,7 @@ const stages = [
 
 function App() {
   const [gameStage, setGameStage] = useState(stages[0].name);
+  const [words] = useState(wordsList);
 
   return (
     <div className="App">
