@@ -1,6 +1,4 @@
 import { useState, useRef } from "react";
-
-// styles
 import "./Game.css";
 
 const Game = ({
