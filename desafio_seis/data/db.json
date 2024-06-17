@@ -1,19 +1,49 @@
 {
-    "products": [
-      {
-        "id": 1,
-        "name": "Camisa",
-        "price": 59.9
-      },
-      {
-        "id": 2,
-        "name": "Calça vermelha",
-        "price": 90
-      },
-      {
-        "id": 3,
-        "name": "Boné aba reta",
-        "price": 29.9
-      }
-    ]
-  }
+  "products": [
+    {
+      "id": "1",
+      "name": "Camisa",
+      "price": 59.9
+    },
+    {
+      "id": "2",
+      "name": "Calça vermelha",
+      "price": 90
+    },
+    {
+      "id": "3",
+      "name": "Boné aba reta",
+      "price": 29.9
+    },
+    {
+      "id": "43af",
+      "name": "Bone Marfim",
+      "price": "250.00"
+    },
+    {
+      "id": "c8b0",
+      "name": "Bone Marfim",
+      "price": "250.00"
+    },
+    {
+      "id": "b9fc",
+      "name": "Bone Marfim",
+      "price": "250.00"
+    },
+    {
+      "id": "272f",
+      "name": "Dedo",
+      "price": "12.00"
+    },
+    {
+      "id": "c58d",
+      "name": "Lingua de Sogra",
+      "price": "166.25"
+    },
+    {
+      "id": "8969",
+      "name": "Abaco",
+      "price": "280.00"
+    }
+  ]
+}
