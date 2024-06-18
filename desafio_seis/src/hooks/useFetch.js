@@ -51,7 +51,7 @@ export const useFetch = (url) => {
     };
 
     httpRequest();
-  }, [config, method, url, loading]);
+  }, [config, method, url]);
 
   return { data, httpConfig, loading };
 };
