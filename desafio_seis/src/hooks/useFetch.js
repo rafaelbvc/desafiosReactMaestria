@@ -22,7 +22,7 @@ export const useFetch = (url) => {
       setMethod(method);
     }
 
-    // DELETE 
+    // DELETE
     if (method === "DELETE") {
       let productUrlId = `${url}/${data}`;
       setConfig({
@@ -50,7 +50,7 @@ export const useFetch = (url) => {
     };
 
     fetchData();
-  }, [url, callFetch]);
+  }, [url, callFetch, method]);
 
   useEffect(() => {
     const httpRequest = async () => {
@@ -63,11 +63,17 @@ export const useFetch = (url) => {
         setCallFetch(json);
       }
 
-      // DELETE 
+      // DELETE
       if (method === "DELETE") {
         await fetch(urlID, { method: method });
-        setCallFetch(null);
+        try {
+        } catch (e) {
+          setError("Erro de requisição...");
+        } finally {
+          setCallFetch(null);
+        }
       }
+      setMethod(null);
     };
 
     httpRequest();
