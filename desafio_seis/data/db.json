@@ -1,16 +1,6 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Camisa",
-      "price": 59.9
-    },
-    {
-      "id": "2",
-      "name": "Calça vermelha",
-      "price": 90
-    },
-    {
       "id": "3",
       "name": "Boné aba reta",
       "price": 29.9
@@ -71,11 +61,6 @@
       "price": "0.5"
     },
     {
-      "id": "c77f",
-      "name": "Bala",
-      "price": "0.5"
-    },
-    {
       "id": "8ccb",
       "name": "Bosque",
       "price": "500"
@@ -84,6 +69,26 @@
       "id": "1681",
       "name": "Hieroglifo",
       "price": "900"
+    },
+    {
+      "id": "53a7",
+      "name": "",
+      "price": ""
+    },
+    {
+      "id": "02ac",
+      "name": "",
+      "price": ""
+    },
+    {
+      "id": "2df0",
+      "name": "",
+      "price": ""
+    },
+    {
+      "id": "0835",
+      "name": "",
+      "price": ""
     }
   ]
 }

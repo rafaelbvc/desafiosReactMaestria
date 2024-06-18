@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 export const useFetch = (url) => {
   const [data, setData] = useState(null);
-
+  const [urlID, setUrlID] = useState(url);
   const [config, setConfig] = useState(null);
   const [method, setMethod] = useState(null);
   const [callFetch, setCallFetch] = useState(false);
@@ -20,6 +20,15 @@ export const useFetch = (url) => {
       });
 
       setMethod(method);
+    }
+
+    if (method === "DELETE") {
+      let productUrlId = `${url}/${data}`;
+      setConfig({
+        method,
+      });
+      setMethod(method);
+      setUrlID(productUrlId);
     }
   };
 
@@ -44,6 +53,10 @@ export const useFetch = (url) => {
 
   useEffect(() => {
     const httpRequest = async () => {
+      if (method === "DELETE") {
+        await fetch(urlID, { method: method });
+      }
+
       if (method === "POST") {
         let fetchOptions = [url, config];
 
@@ -55,7 +68,7 @@ export const useFetch = (url) => {
     };
 
     httpRequest();
-  }, [config, method, url]);
+  }, [config, method, url, urlID]);
 
   return { data, httpConfig, loading, error };
 };

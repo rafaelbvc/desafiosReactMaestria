@@ -8,6 +8,7 @@ function App() {
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
+  const [productID, setProductID] = useState("");
 
   console.log(items);
 
@@ -24,6 +25,12 @@ function App() {
     setPrice("");
   };
 
+  const handleDelete = async (e) => {
+    e.preventDefault();
+    httpConfig(productID, "DELETE");
+    setProductID("");
+  };
+
   return (
     <div className="App">
       <h1>Lista de Produtos</h1>
@@ -35,7 +42,7 @@ function App() {
           {items &&
             items.map((product) => (
               <li key={product.id}>
-                {product.name} - R$: {product.price}
+                Id {product.id} - {product.name} - R$: {product.price}
               </li>
             ))}
         </ul>
@@ -61,9 +68,21 @@ function App() {
             />
           </label>
           {loading && <input type="submit" value="Aguarde" disabled />}
-
           {!loading && <input type="submit" value="Criar" />}
         </form>
+        <div>
+          <label>
+            <input
+              type="text"
+              name="productID"
+              value={productID}
+              onChange={(e) => setProductID(e.target.value)}
+            />
+          </label>
+          <button onClick={handleDelete}>
+            Delete
+          </button>
+        </div>
       </div>
     </div>
   );
