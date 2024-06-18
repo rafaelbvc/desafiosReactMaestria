@@ -10,8 +10,6 @@ function App() {
   const [price, setPrice] = useState("");
   const [productID, setProductID] = useState("");
 
-  console.log(items);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const product = {
@@ -47,7 +45,7 @@ function App() {
             ))}
         </ul>
       )}
-      <div className="add-product">
+      <div className="add_product">
         <form onSubmit={handleSubmit}>
           <label>
             Nome:
@@ -70,8 +68,10 @@ function App() {
           {loading && <input type="submit" value="Aguarde" disabled />}
           {!loading && <input type="submit" value="Criar" />}
         </form>
-        <div>
+        <section className="delete_section">
           <label>
+            Insira o ID do Produto a ser Deletado:
+            <br />
             <input
               type="text"
               name="productID"
@@ -79,10 +79,10 @@ function App() {
               onChange={(e) => setProductID(e.target.value)}
             />
           </label>
-          <button onClick={handleDelete}>
+          <button className="delete_section_btn" onClick={handleDelete}>
             Delete
           </button>
-        </div>
+        </section>
       </div>
     </div>
   );

@@ -22,6 +22,7 @@ export const useFetch = (url) => {
       setMethod(method);
     }
 
+    // DELETE 
     if (method === "DELETE") {
       let productUrlId = `${url}/${data}`;
       setConfig({
@@ -53,11 +54,6 @@ export const useFetch = (url) => {
 
   useEffect(() => {
     const httpRequest = async () => {
-      if (method === "DELETE") {
-        await fetch(urlID, { method: method });
-        setCallFetch(null);
-      }
-
       if (method === "POST") {
         let fetchOptions = [url, config];
 
@@ -65,6 +61,12 @@ export const useFetch = (url) => {
 
         const json = await res.json();
         setCallFetch(json);
+      }
+
+      // DELETE 
+      if (method === "DELETE") {
+        await fetch(urlID, { method: method });
+        setCallFetch(null);
       }
     };
 
