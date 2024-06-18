@@ -55,6 +55,7 @@ export const useFetch = (url) => {
     const httpRequest = async () => {
       if (method === "DELETE") {
         await fetch(urlID, { method: method });
+        setCallFetch(null);
       }
 
       if (method === "POST") {

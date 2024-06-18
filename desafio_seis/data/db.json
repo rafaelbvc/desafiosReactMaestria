@@ -1,11 +1,6 @@
 {
   "products": [
     {
-      "id": "3",
-      "name": "Boné aba reta",
-      "price": 29.9
-    },
-    {
       "id": "43af",
       "name": "Bone Marfim",
       "price": "250.00"
@@ -69,26 +64,6 @@
       "id": "1681",
       "name": "Hieroglifo",
       "price": "900"
-    },
-    {
-      "id": "53a7",
-      "name": "",
-      "price": ""
-    },
-    {
-      "id": "02ac",
-      "name": "",
-      "price": ""
-    },
-    {
-      "id": "2df0",
-      "name": "",
-      "price": ""
-    },
-    {
-      "id": "0835",
-      "name": "",
-      "price": ""
     }
   ]
 }
