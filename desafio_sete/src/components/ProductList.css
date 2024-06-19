@@ -1,0 +1,11 @@
+.container_product_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  margin: 5px 0 5px 0;
+  list-style: none;
+}
