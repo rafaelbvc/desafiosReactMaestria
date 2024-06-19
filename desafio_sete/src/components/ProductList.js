@@ -15,9 +15,11 @@ const ProductList = () => {
         const items = await data.json();
         setItems(items);
       } catch (e) {
-        setErrorFetch(e);
+        setLoading(false);
+        setErrorFetch("Something went wrong");
       } finally {
         setLoading(false);
+        setErrorFetch(null);
       }
     };
     handleFetch();
@@ -25,14 +27,14 @@ const ProductList = () => {
 
   return (
     <div className="container_product_list">
-      <h1>Produtos</h1>
-      {loading && <p>Carregando...</p>}
-      {!errorFetch === null && <p>Error: {errorFetch}</p>}
+      <h1>Products</h1>
+      {loading && <p>Loading...</p>}
+      {errorFetch && <p>Error: {errorFetch}</p>}
       {!loading && (
         <ul>
           {items.map((products) => (
-            <li key={products.id}>
-              Name: {products.name} - Price: {products.price}
+            <li key={products.id} >
+              Name: {products.name} - $: {products.price}
             </li>
           ))}
         </ul>
