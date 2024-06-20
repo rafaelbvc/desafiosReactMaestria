@@ -1,6 +1,6 @@
 import { useSearchParams, Link } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-import { urlParamsF } from "../config/config";
+import { urlParamsF } from "../utils/urlUtils";
 
 const Search = () => {
   let [searchParams] = useSearchParams();
@@ -8,6 +8,9 @@ const Search = () => {
   const { urlParams } = urlParamsF(searchParams);
 
   const { data: items } = useFetch(urlParams);
+
+  console.log(items, urlParams)
+
 
   return (
     <div>

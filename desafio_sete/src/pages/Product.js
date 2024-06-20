@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-import { urlIDF } from "../config/config";
+import { urlIDF } from "../utils/urlUtils";
 
 import "./Product.css"
 

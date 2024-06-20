@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { url } from "../config/config";
+import { url } from "../config/url";
 import "./ProductList.css";
 
 const ProductList = () => {

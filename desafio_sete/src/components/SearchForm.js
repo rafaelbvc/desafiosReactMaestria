@@ -1,15 +1,17 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-export const SearchForm = () => {
+const SearchForm = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState();
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+      e.preventDefault();
 
     navigate("/search?q=" + query);
   };
+
+
 
   return (
     <form onSubmit={handleSubmit}>
@@ -18,4 +20,4 @@ export const SearchForm = () => {
     </form>
   );
 };
-
+export default SearchForm;

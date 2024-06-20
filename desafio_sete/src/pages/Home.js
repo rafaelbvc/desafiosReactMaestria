@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-import { url } from "../config/config";
+import { url } from "../config/url";
 import "./Home.css";
 
 const Home = () => {
