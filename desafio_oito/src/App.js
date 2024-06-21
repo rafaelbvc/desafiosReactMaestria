@@ -8,7 +8,6 @@ import Description from "./pages/Description";
 function App() {
   return (
     <div className="App">
-      <h1>Context</h1>
       <BrowserRouter>
         <NavBar />
         <Routes>

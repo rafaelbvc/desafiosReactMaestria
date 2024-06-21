@@ -6,13 +6,21 @@ import { useTitleColorContext } from "../hooks/useTitleColorContex";
 const Home = () => {
   const { counter } = useCounterContext();
 
-  const { colorContext } = useTitleColorContext();
+  const { color, dispatch } = useTitleColorContext();
+
+  const setTitleColor = (color) => {
+    dispatch({ type: color });
+  };
 
   return (
     <div className="home_pg">
-      <h3>Home</h3>
+      <h3 style={{ color: color }}>Home</h3>
       <p>Valor do contador: {counter}</p>
-      <ChangeCounter /> 
+      <ChangeCounter />
+      <div>
+        <button onClick={() => setTitleColor("RED")}>Vermelho</button>
+        <button onClick={() => setTitleColor("BLUE")}>Azul</button>
+      </div>
     </div>
   );
 };
