@@ -1,4 +1,7 @@
-div {
-    display: flex;
-    justify-content: center;
+.photos_pg {
+  margin-top: 5vh;
+}
+
+h3 {
+  text-align: center;
 }

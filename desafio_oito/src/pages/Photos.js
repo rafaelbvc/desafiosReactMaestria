@@ -1,9 +1,11 @@
-import "./Photos.css"
+import "./Photos.css";
 
 const Photos = () => {
   return (
-    <div>Photos</div>
-  )
-}
+    <div className="photos_pg">
+      <h3>Photos</h3>
+    </div>
+  );
+};
 
-export default Photos
+export default Photos;

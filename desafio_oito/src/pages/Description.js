@@ -1,9 +1,11 @@
-
+import "./Description.css";
 
 const Description = () => {
   return (
-    <div>Description</div>
-  )
-}
+    <div className="description_pg">
+      <h3>Description</h3>
+    </div>
+  );
+};
 
-export default Description
+export default Description;

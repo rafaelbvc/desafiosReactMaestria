@@ -1,5 +1,11 @@
+import "./Home.css";
+
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div className="home_pg">
+      <h3>Home</h3>
+    </div>
+  );
 };
 
 export default Home;
