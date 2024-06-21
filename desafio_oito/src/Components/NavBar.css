@@ -1,0 +1,22 @@
+nav {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+a {
+  width: 5vw;
+  height: 2vh;
+  color: rgb(85, 34, 133);
+  font-weight: bold;
+  margin: 0.5vh 0.5vw;
+}
+
+a:hover {
+  color: rgb(0, 0, 0);
+}
+
+/* .active {
+  background-color: rgb(85, 34, 133);
+  color: rgb(206, 212, 212);
+} */
