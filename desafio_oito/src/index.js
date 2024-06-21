@@ -1,18 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
 import { CounterContextProvider } from "./context/CounterContext";
+import { TitleColorContextProvider } from "./context/TitleColorContext";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <CounterContextProvider>
-      <App />
+      <TitleColorContextProvider>
+        <App />
+      </TitleColorContextProvider>
     </CounterContextProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 
 reportWebVitals();

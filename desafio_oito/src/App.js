@@ -8,13 +8,14 @@ import Description from "./pages/Description";
 function App() {
   return (
     <div className="App">
+      <h1>Context</h1>
       <BrowserRouter>
         <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/photos" element={<Photos />} />
-          <Route path="/description" element={<Description />} />
-        </Routes>
+          <Route path="photos" element={<Photos />} />
+          <Route path="description" element={<Description />} />
+          </Routes>
       </BrowserRouter>
     </div>
   );
