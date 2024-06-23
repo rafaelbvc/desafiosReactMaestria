@@ -1,5 +1,5 @@
 import styles from "./Register.module.css";
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
 const Register = () => {
   return (
