@@ -56,11 +56,16 @@ export const useAuthentication = () => {
     }
   };
 
+  const logout = () => {
+    checkIfIsCancelled();
+    signOut(auth);
+  };
+
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
 
-  return { auth, createUser, error, loading, success };
+  return { auth, createUser, error, loading, success, logout };
 };
 
 //  qwe!123!QWE
