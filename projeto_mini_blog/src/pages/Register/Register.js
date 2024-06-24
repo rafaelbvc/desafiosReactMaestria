@@ -14,7 +14,6 @@ const Register = () => {
     createUser,
     error: authError,
     loading,
-    setLoading,
   } = useAuthentication();
 
   const handleSubmit = async (e) => {
@@ -44,13 +43,12 @@ const Register = () => {
     }
 
     if (loading) {
-      setLoading(false);
-      setDisplayName("")
-      setEmail("")
-      setPassword("")
-      setConfirmPassword("")
+      setDisplayName("");
+      setEmail("");
+      setPassword("");
+      setConfirmPassword("");
     }
-  }, [authError, loading, setLoading]);
+  }, [authError, loading]);
 
   return (
     <div className={styles.register}>

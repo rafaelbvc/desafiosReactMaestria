@@ -35,7 +35,8 @@ export const useAuthentication = () => {
         data.password
       );
       await updateProfile(user, { displayName: data.displayName });
-      setSuccess("Usuário criado com sucesso!")
+      setLoading(false);
+      setSuccess("Usuário criado com sucesso!");
       return user;
     } catch (error) {
       console.log(error.message);
@@ -50,16 +51,16 @@ export const useAuthentication = () => {
       } else {
         systemErrorMessage = " Ocorreu um erro, por favor tente mais tarde.";
       }
-
+      setLoading(false);
       setError(systemErrorMessage);
     }
-
-    setLoading(false);
   };
 
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
 
-  return { auth, createUser, error, loading, setLoading, success };
+  return { auth, createUser, error, loading, success };
 };
+
+//  qwe!123!QWE
