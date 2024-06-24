@@ -36,7 +36,7 @@ export const useAuthentication = () => {
       );
       await updateProfile(user, { displayName: data.displayName });
       setLoading(false);
-      setSuccess("Usuário criado com sucesso!");
+      setSuccess("Usuário cadastrado com sucesso!");
       return user;
     } catch (error) {
       console.log(error.message);
