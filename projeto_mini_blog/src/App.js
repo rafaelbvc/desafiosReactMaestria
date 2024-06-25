@@ -1,5 +1,9 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { AuthProvider } from "./context/AuthContex";
+import { onAuthStateChanged } from "firebase/auth";
+import { useAuthentication } from "./hooks/useAuthentication";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import NavBar from "./components/NavBar/NavBar";
@@ -8,10 +12,6 @@ import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
 import CreatePost from "./pages/CreatePost/CreatePost";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import { AuthProvider } from "./context/AuthContex";
-import { onAuthStateChanged } from "firebase/auth";
-import { useState, useEffect } from "react";
-import { useAuthentication } from "./hooks/useAuthentication";
 
 function App() {
   const [user, setUser] = useState(undefined);

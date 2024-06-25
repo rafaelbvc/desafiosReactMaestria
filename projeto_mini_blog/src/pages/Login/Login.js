@@ -9,7 +9,7 @@ const Login = () => {
 
   const {
     success,
-    createUser,
+    login,
     error: authError,
     loading,
   } = useAuthentication();
@@ -24,7 +24,7 @@ const Login = () => {
       password,
     };
 
-    const res = await createUser(user);
+    const res = await login(user);
 
     console.log(res);
   };
@@ -41,7 +41,7 @@ const Login = () => {
   }, [authError, loading]);
 
   return (
-    <div className={styles.register}>
+    <div className={styles.login}>
       <h1>Entrar</h1>
       <p>Faça o login para poder utilizar o sistema</p>
       <form onSubmit={handleSubmit}>

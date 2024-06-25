@@ -54,7 +54,7 @@ const NavBar = () => {
             </li>
             <li>
               <NavLink
-                to="/dashboar"
+                to="/dashboard"
                 className={({ isActive }) => (isActive ? styles.active : "")}
               >
                 Dashboard

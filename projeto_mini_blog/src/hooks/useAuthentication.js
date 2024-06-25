@@ -1,10 +1,11 @@
-import { db } from "../firebase/config";
+import { app } from "../firebase/config";
 
 import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
   signOut,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { useState, useEffect } from "react";
 
@@ -14,7 +15,7 @@ export const useAuthentication = () => {
   const [cancelled, setCancelled] = useState(false);
   const [success, setSuccess] = useState(null);
 
-  const auth = getAuth();
+  const auth = getAuth(app);
 
   function checkIfIsCancelled() {
     if (cancelled) {
@@ -61,11 +62,35 @@ export const useAuthentication = () => {
     signOut(auth);
   };
 
+  const login = async (data) => {
+    checkIfIsCancelled();
+    setLoading(true);
+    setError(false);
+
+    try {
+      await signInWithEmailAndPassword(auth, data.email, data.password);
+      setLoading(false);
+    } catch (error) {
+      let systemErrorMessage;
+
+      if (error.message.includes("user-not-found")) {
+        systemErrorMessage = "Usuário não encontrado.";
+      } else if (error.message.includes("invalid")) {
+        systemErrorMessage = "Email ou senha incorretos, tente novamente.";
+      } else {
+        systemErrorMessage = "Ocorreu um erro, por favor tente mais tarde.";
+      }
+
+      setError(systemErrorMessage);
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
 
-  return { auth, createUser, error, loading, success, logout };
+  return { auth, createUser, error, loading, success, logout, login };
 };
 
 //  qwe!123!QWE
