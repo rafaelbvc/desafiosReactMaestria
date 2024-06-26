@@ -29,7 +29,6 @@ const CreatePost = () => {
 
     const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
 
-
     if (!title || !image || !tags || !body) {
       setFormError("Por favor, preencha todos os campos!");
     }
@@ -40,7 +39,7 @@ const CreatePost = () => {
       title,
       image,
       body,
-      tagsArray,
+      tags: tagsArray,
       uid: user.uid,
       createdBy: user.displayName,
     });
@@ -96,13 +95,14 @@ const CreatePost = () => {
             onChange={(e) => setTags(e.target.value)}
           />
         </label>
-
-        {!response.loading && <button className="btn">Criar Post</button>}
-        {response.loading && <button className="btn">Aguarde...</button>}
-        {response.error && <p className="error">{response.error}</p>}
-        {formError && <p className="error">{formError}</p>}
-        {!response.error && formError && (
-          <p className="success">{response.success}</p>
+        {!response.loading && <button className="btn">Criar post!</button>}
+        {response.loading && (
+          <button className="btn" disabled>
+            Aguarde.. .
+          </button>
+        )}
+        {(response.error || formError) && (
+          <p className="error">{response.error || formError}</p>
         )}
       </form>
     </div>

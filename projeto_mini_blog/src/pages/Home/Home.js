@@ -12,7 +12,7 @@ const Home = () => {
     e.preventDefault();
   };
 
-  console.log(posts, "EUo");
+  console.log(posts);
 
   return (
     <div className={styles.home}>
@@ -25,18 +25,17 @@ const Home = () => {
         />
         <button className="btn btn-dark">Pesquisar</button>
       </form>
-      <div>
+      <div className="post-list">
         {loading && <p>Carregando...</p>}
-        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
-        {/* {posts && posts.map((post) => console.log(post.tagsArray))} */}
         {posts && posts.length === 0 && (
           <div className={styles.noposts}>
-            <p>Nâo foram encontrados posts</p>
+            <p>Não foram encontrados posts</p>
             <Link to="/posts/create" className="btn">
               Criar primeiro post
             </Link>
           </div>
         )}
+        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
       </div>
     </div>
   );
