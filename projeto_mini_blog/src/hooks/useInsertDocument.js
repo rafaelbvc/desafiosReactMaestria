@@ -8,7 +8,7 @@ const initialState = {
   sucess: null,
 };
 
-const inserReducer = (state, action) => {
+const insertReducer = (state, action) => {
   switch (action.type) {
     case "LOADING":
       return { loading: true, error: null, sucess: null };
@@ -24,7 +24,7 @@ const inserReducer = (state, action) => {
 };
 
 export const useInsertDocument = (docCollection) => {
-  const [response, dispatch] = useReducer(inserReducer, initialState);
+  const [response, dispatch] = useReducer(insertReducer, initialState);
 
   const [cancelled, setCancelled] = useState(false);
 
