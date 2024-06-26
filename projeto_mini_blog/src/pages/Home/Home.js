@@ -8,8 +8,14 @@ const Home = () => {
   const [query, setQuery] = useState("");
   const { documents: posts, loading } = useFetchDocuments("posts");
 
+  const navigate = useNavigate();
+
   const handSubmit = (e) => {
     e.preventDefault();
+
+    if (query) {
+      return navigate(`/search?q=${query}`);
+    }
   };
 
   //ARRUUUUUUUUUUMAAARRRR TAGSSSSSSSSSSSSSSSSSSSSSSSSSS UNDEFINED
@@ -21,7 +27,7 @@ const Home = () => {
         <input
           type="text"
           placeholder="Ou busque por tags..."
-          onChange={(e) => setQuery(e.target.vale)}
+          onChange={(e) => setQuery(e.target.value)}
         />
         <button className="btn btn-dark">Pesquisar</button>
       </form>
@@ -35,7 +41,7 @@ const Home = () => {
             </Link>
           </div>
         )}
-        {posts && posts.map((post) => <PostDetail key={post.id} post={post}/>)}
+        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
       </div>
     </div>
   );
