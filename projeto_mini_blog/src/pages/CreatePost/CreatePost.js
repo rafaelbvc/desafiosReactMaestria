@@ -23,6 +23,7 @@ const CreatePost = () => {
 
     try {
       new URL(image);
+      console.log(image, typeof formError);
     } catch (error) {
       setFormError("A imagem precisa ser uma URL.");
     }
