@@ -12,7 +12,6 @@ const Home = () => {
     e.preventDefault();
   };
 
-  console.log(posts);
 
   return (
     <div className={styles.home}>
