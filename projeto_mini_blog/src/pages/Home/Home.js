@@ -12,6 +12,7 @@ const Home = () => {
     e.preventDefault();
   };
 
+  //ARRUUUUUUUUUUMAAARRRR TAGSSSSSSSSSSSSSSSSSSSSSSSSSS UNDEFINED
 
   return (
     <div className={styles.home}>
@@ -34,7 +35,7 @@ const Home = () => {
             </Link>
           </div>
         )}
-        {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
+        {posts && posts.map((post) => <PostDetail key={post.id} post={post}/>)}
       </div>
     </div>
   );
