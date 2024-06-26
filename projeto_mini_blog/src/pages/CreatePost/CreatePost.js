@@ -23,12 +23,12 @@ const CreatePost = () => {
 
     try {
       new URL(image);
-      console.log(image, typeof formError);
     } catch (error) {
       setFormError("A imagem precisa ser uma URL.");
     }
 
     const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+
 
     if (!title || !image || !tags || !body) {
       setFormError("Por favor, preencha todos os campos!");
@@ -40,7 +40,7 @@ const CreatePost = () => {
       title,
       image,
       body,
-      tags,
+      tagsArray,
       uid: user.uid,
       createdBy: user.displayName,
     });
