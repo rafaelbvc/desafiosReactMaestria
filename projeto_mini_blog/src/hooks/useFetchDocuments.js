@@ -13,6 +13,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
 
+
   const [cancelled, setCancelled] = useState(false);
 
   useEffect(() => {
@@ -31,7 +32,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
         if (search) {
           q = await query(
             collectionRef,
-            where("tagsArray", "array-contains", search),
+            where("tags", "array-contains", search),
             orderBy("createdAt", "desc")
           );
         } else if (uid) {
@@ -63,13 +64,11 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
     loadData();
   }, [docCollection, search, uid, cancelled]);
 
+  console.log(documents);
 
   useEffect(() => {
     return () => setCancelled(true);
   }, []);
-
-  const dataData = documents
-  console.log(dataData)
 
   return { documents, loading, error };
 };
