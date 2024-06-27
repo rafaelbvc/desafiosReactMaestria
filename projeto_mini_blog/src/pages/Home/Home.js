@@ -18,8 +18,6 @@ const Home = () => {
     }
   };
 
-  //ARRUUUUUUUUUUMAAARRRR TAGSSSSSSSSSSSSSSSSSSSSSSSSSS UNDEFINED
-
   return (
     <div className={styles.home}>
       <h1>Veja os nossos posts mais recentes</h1>
