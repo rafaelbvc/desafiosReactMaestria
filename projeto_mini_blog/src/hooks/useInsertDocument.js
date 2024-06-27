@@ -16,8 +16,6 @@ const insertReducer = (state, action) => {
       return { loading: false, error: null, sucess: null };
     case "ERROR":
       return { loading: false, error: action.payload, sucess: null };
-    case "SUCESS":
-      return { loading: false, error: null, sucess: true };
     default:
       return state;
   }
