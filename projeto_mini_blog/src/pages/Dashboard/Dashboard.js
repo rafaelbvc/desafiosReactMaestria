@@ -12,7 +12,7 @@ const Dashboard = () => {
   const deleteDocument = (id) => {};
 
   return (
-    <div>
+    <div className={styles.dashboard}>
       <h2>Dashboard</h2>
       <p>Gerencie seus posts</p>
       {posts && posts.length === 0 ? (
@@ -24,13 +24,13 @@ const Dashboard = () => {
         </div>
       ) : (
         <>
-          <div>
+          <div className={styles.post_header}>
             <span>Título</span>
             <span>Ações</span>
           </div>
           {Array.isArray(posts) &&
             posts.map((post, index) => (
-              <div key={index}>
+              <div key={index} className={styles.post_row}>
                 <p>{post.title}</p>
                 <div>
                   <Link to={`/posts/${post.id}`} className="btn btn-outline">
