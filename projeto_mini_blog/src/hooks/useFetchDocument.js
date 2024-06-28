@@ -7,14 +7,8 @@ export const useFetchDocument = (docCollection, id) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
 
-  const [cancelled, setCancelled] = useState(false);
-
   useEffect(() => {
-    async function loadDocument() {
-      if (cancelled) {
-        return;
-      }
-
+    const loadDocument = async () => {
       setLoading(true);
 
       try {
@@ -22,18 +16,18 @@ export const useFetchDocument = (docCollection, id) => {
         const docSnap = await getDoc(docRef);
 
         setDocument(docSnap.data());
-        setLoading(false);
       } catch (error) {
         console.log(error);
         setError(error.message);
       }
-    }
-    loadDocument();
-  }, [docCollection, id, cancelled]);
 
-  useEffect(() => {
-    return () => setCancelled(true);
-  }, []);
+      setLoading(false);
+    };
+
+    loadDocument();
+  }, [docCollection, id]);
+
+  console.log(document);
 
   return { document, loading, error };
 };

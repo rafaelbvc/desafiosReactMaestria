@@ -1,16 +1,17 @@
 import styles from "./Home.module.css";
+import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 import { useNavigate, Link } from "react-router-dom";
 import { useState } from "react";
-import { useFetchDocuments } from "../../hooks/useFetchDocuments";
 import PostDetail from "../../components/PostDetail/PostDetail";
 
 const Home = () => {
-  const [query, setQuery] = useState("");
   const { documents: posts, loading } = useFetchDocuments("posts");
 
   const navigate = useNavigate();
 
-  const handSubmit = (e) => {
+  const [query, setQuery] = useState("");
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     if (query) {
@@ -18,10 +19,12 @@ const Home = () => {
     }
   };
 
+  console.log(loading);
+
   return (
     <div className={styles.home}>
       <h1>Veja os nossos posts mais recentes</h1>
-      <form onSubmit={handSubmit} className={styles.search_form}>
+      <form className={styles.search_form} onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Ou busque por tags..."

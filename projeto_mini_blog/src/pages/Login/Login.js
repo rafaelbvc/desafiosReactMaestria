@@ -7,12 +7,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const {
-    success,
-    login,
-    error: authError,
-    loading,
-  } = useAuthentication();
+  const { login, error: authError, loading } = useAuthentication();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,15 +25,11 @@ const Login = () => {
   };
 
   useEffect(() => {
+    console.log(authError);
     if (authError) {
       setError(authError);
     }
-
-    if (loading) {
-      setEmail("");
-      setPassword("");
-    }
-  }, [authError, loading]);
+  }, [authError]);
 
   return (
     <div className={styles.login}>
@@ -52,8 +43,8 @@ const Login = () => {
             name="email"
             required
             placeholder="E-mail do usuário"
-            value={email}
             onChange={(e) => setEmail(e.target.value)}
+            value={email}
           />
         </label>
         <label>
@@ -62,15 +53,18 @@ const Login = () => {
             type="password"
             name="password"
             required
-            placeholder="Insira sua senha"
-            value={password}
+            placeholder="Insira a senha"
             onChange={(e) => setPassword(e.target.value)}
+            value={password}
           />
         </label>
         {!loading && <button className="btn">Entrar</button>}
-        {loading && <button className="btn">Aguarde...</button>}
+        {loading && (
+          <button className="btn" disabled>
+            Aguarde...
+          </button>
+        )}
         {error && <p className="error">{error}</p>}
-        {!error && <p className="success">{success}</p>}
       </form>
     </div>
   );

@@ -20,7 +20,7 @@
   list-style: none;
 }
 
-.links_list {
+.links_list li {
   margin-right: 1em;
 }
 
@@ -29,7 +29,6 @@
 }
 
 .active {
-    background-color: #000;
-    color: #fff;
-  }
-
+  background-color: #000;
+  color: #fff;
+}

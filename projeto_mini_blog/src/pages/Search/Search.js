@@ -1,7 +1,7 @@
 import styles from "./Search.module.css";
 import { useFetchDocuments } from "../../hooks/useFetchDocuments";
-import { Link } from "react-router-dom";
 import { useQuery } from "../../hooks/useQuery";
+import { Link } from "react-router-dom";
 import PostDetail from "../../components/PostDetail/PostDetail";
 
 const Search = () => {

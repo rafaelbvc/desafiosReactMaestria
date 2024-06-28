@@ -20,7 +20,7 @@ const CreatePost = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormError("");
-
+  
     try {
       new URL(image);
     } catch (error) {
@@ -28,7 +28,7 @@ const CreatePost = () => {
     }
 
     const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
-
+ 
     if (!title || !image || !tags || !body) {
       setFormError("Por favor, preencha todos os campos!");
     }
@@ -40,12 +40,11 @@ const CreatePost = () => {
       image,
       body,
       tags: tagsArray,
-      // tags,
       uid: user.uid,
       createdBy: user.displayName,
     });
 
-    if (formError) return;
+    if(formError) return
 
     insertDocument({
       title,
