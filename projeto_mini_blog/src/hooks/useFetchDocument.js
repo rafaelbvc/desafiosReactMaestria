@@ -15,8 +15,6 @@ export const useFetchDocument = (docCollection, id) => {
         const docRef = await doc(db, docCollection, id);
         const docSnap = await getDoc(docRef);
 
-        console.log(docSnap.data(),"docsnapdata")
-
         setDocument(docSnap.data());
       } catch (error) {
         console.log(error);
@@ -29,7 +27,7 @@ export const useFetchDocument = (docCollection, id) => {
     loadDocument();
   }, [docCollection, id]);
 
-  console.log(document, db, docCollection, id);
+  console.log(document);
 
   return { document, loading, error };
 };

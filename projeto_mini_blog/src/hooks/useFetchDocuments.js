@@ -13,7 +13,6 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(null);
 
-
   const [cancelled, setCancelled] = useState(false);
 
   useEffect(() => {
@@ -64,6 +63,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
     loadData();
   }, [docCollection, search, uid, cancelled]);
 
+  console.log(documents);
 
   useEffect(() => {
     return () => setCancelled(true);

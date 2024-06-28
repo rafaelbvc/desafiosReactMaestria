@@ -1,17 +1,17 @@
 import { useState, useEffect, useReducer } from "react";
 import { db } from "../firebase/config";
-import { doc, deleteDoc } from "firebase/firestore";
+import { updateDoc, doc } from "firebase/firestore";
 
 const initialState = {
   loading: null,
   error: null,
 };
 
-const deleteReducer = (state, action) => {
+const updateReducer = (state, action) => {
   switch (action.type) {
     case "LOADING":
       return { loading: true, error: null };
-    case "DELETED_DOC":
+    case "UPDATED_DOC":
       return { loading: false, error: null };
     case "ERROR":
       return { loading: false, error: action.payload };
@@ -20,8 +20,8 @@ const deleteReducer = (state, action) => {
   }
 };
 
-export const useDeleteDocument = (docCollection) => {
-  const [response, dispatch] = useReducer(deleteReducer, initialState);
+export const useUpdateDocument = (docCollection) => {
+  const [response, dispatch] = useReducer(updateReducer, initialState);
 
   const [cancelled, setCancelled] = useState(false);
 
@@ -31,17 +31,24 @@ export const useDeleteDocument = (docCollection) => {
     }
   };
 
-  const deleteDocument = async (id) => {
+  const updateDocument = async (uid, data) => {
     checkCancelBeforeDispatch({ type: "LOADING" });
 
     try {
-      const deletedDocument = await deleteDoc(doc(db, docCollection, id));
+      const docRef = await doc(db, docCollection, uid);
+
+      console.log(docRef);
+
+      const updatedDocument = await updateDoc(docRef, data);
+
+      console.log(updateDocument);
 
       checkCancelBeforeDispatch({
-        type: "DELETED_DOC",
-        payload: deletedDocument,
+        type: "UPDATED_DOC",
+        payload: updatedDocument,
       });
     } catch (error) {
+      console.log(error);
       checkCancelBeforeDispatch({ type: "ERROR", payload: error.message });
     }
   };
@@ -50,5 +57,5 @@ export const useDeleteDocument = (docCollection) => {
     return () => setCancelled(true);
   }, []);
 
-  return { deleteDocument, response };
+  return { updateDocument, response };
 };

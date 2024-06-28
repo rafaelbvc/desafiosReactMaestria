@@ -28,22 +28,22 @@
   padding: 10px 25px;
 }
 
-.post_header,
-.post_row {
+.post_header {
   display: flex;
   justify-content: space-between;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
   width: 80%;
   padding: 10px;
 }
 
-.post_header {
-  font-weight: bold;
-  border-bottom: 2px solid #ccc;
-}
-
 .post_row {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #eee;
+  width: 80%;
+  padding: 10px;
 }
 
 .post_row p {
