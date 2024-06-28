@@ -6,7 +6,6 @@ const Post = () => {
   const { id } = useParams();
   const { document: post, loading } = useFetchDocument("posts", id);
 
-  console.log(post, "post");
 
   return (
     <div className={styles.post_container}>
