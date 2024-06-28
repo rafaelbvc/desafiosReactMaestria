@@ -1,0 +1,14 @@
+html {
+  display: flex;
+  justify-content: center;
+  background-color: #c0b7d3;
+}
+
+body {
+  width: 90vw;
+  height: 100vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #ab9dc2;
+  padding: 0;
+  margin: 0;
+}
