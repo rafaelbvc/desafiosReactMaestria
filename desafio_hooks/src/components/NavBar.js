@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <nav className={styles.navbar_container}>
-      <p className={styles.brand}>
+      <p>
         React<span>Links</span>
       </p>
       <menu>

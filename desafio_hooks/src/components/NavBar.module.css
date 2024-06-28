@@ -9,19 +9,16 @@
 menu {
   min-width: 60em;
   display: flex;
-  justify-content: left;
+  justify-content: right;
   margin-right: 1em;
   font-size: 1.2em;
 }
 
-menu a {
-  text-decoration: none;
-  color: azure;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
 a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: azure;
   margin: 0em 2em;
   display: flex;
   justify-content: center;
@@ -29,13 +26,14 @@ a {
   width: 6em;
   height: 1.6em;
   border-radius: 0.2em;
+  letter-spacing: 0.12em;
 }
 
 p {
   font-size: 1.2em;
 }
 
-p span {
+span {
   font-weight: 900;
   color: azure;
   text-transform: uppercase;
