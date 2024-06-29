@@ -6,7 +6,8 @@ html {
 
 body {
   width: 90vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: fit-content;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background-color: #ab9dc2;
   padding: 0;
