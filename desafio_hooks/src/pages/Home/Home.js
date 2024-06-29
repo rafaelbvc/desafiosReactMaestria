@@ -6,6 +6,8 @@ import styles from "./Home.module.css";
 import { useContext } from "react";
 import HookUseRef from "../../components/Hooks/HookUseRef";
 import HookUseCallback from "../../components/Hooks/HookUseCallback/HookUseCallback";
+import HookUseMemo from "../../components/Hooks/HookUseMemo";
+import HookUseLayoutEffect from "../../components/Hooks/HookUseLayoutEffect";
 
 const Home = () => {
   const { contextValue } = useContext(SomeContext);
@@ -20,6 +22,8 @@ const Home = () => {
       <p>Valor do context: {contextValue}</p>
       <HookUseRef />
       <HookUseCallback />
+      <HookUseMemo />
+      <HookUseLayoutEffect />
     </div>
   );
 };
