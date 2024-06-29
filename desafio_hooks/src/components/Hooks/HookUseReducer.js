@@ -39,18 +39,20 @@ const HookUseReducer = () => {
     }
   };
 
-  const [taskText, setTaskText] = useState([]);
+  const [taskText, setTaskText] = useState("");
   const [tasks, dispatchTasks] = useReducer(taskReducer, initialTasks);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatchTasks();
+    dispatchTasks({ type: "ADD" });
   };
 
   const removeTask = (id) => {
     dispatchTasks({ type: "DELETE", id });
   };
+
+  console.log(taskText, "taskText", tasks);
 
   return (
     <div>
