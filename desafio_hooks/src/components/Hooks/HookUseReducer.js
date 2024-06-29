@@ -52,11 +52,10 @@ const HookUseReducer = () => {
     dispatchTasks({ type: "DELETE", id });
   };
 
-  console.log(taskText, "taskText", tasks);
 
   return (
     <div>
-      <h1>useReducer</h1>
+      <h2>useReducer</h2>
       <p>Número: {number}</p>
       <button onClick={dispatch}>Alterar número!</button>
       {/* useReducer com actions */}

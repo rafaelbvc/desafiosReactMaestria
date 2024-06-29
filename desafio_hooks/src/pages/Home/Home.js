@@ -1,3 +1,4 @@
+import HookUseEffect from "../../components/Hooks/HookUseEffect";
 import HookUseReducer from "../../components/Hooks/HookUseReducer";
 import HookUseState from "../../components/Hooks/HookUseState";
 import styles from "./Home.module.css";
@@ -8,6 +9,7 @@ const Home = () => {
       <h1>Home</h1>
       <HookUseState />
       <HookUseReducer />
+      <HookUseEffect />
     </div>
   );
 };
