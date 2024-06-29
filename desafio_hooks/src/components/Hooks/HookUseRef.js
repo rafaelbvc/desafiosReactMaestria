@@ -33,7 +33,7 @@ const HookUseRef = () => {
       <p>Counter B: {counterB}</p>
       <button onClick={() => setCounterB(counterB + 1)}>Counter B</button>
       <form onSubmit={handleSubmit}>
-        <p>useRef & DOM</p>
+        <h2>useRef & DOM</h2>
         <input
           type="text"
           ref={inputRef}
