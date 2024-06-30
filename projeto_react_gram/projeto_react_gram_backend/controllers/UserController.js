@@ -12,7 +12,10 @@ const generateToken = (id) => {
 };
 
 const register = async (req, res) => {
+
+  
+
   res.send("Registro");
 };
 
-module.exports = {register};
+module.exports = { register };
