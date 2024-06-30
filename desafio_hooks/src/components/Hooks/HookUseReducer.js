@@ -74,6 +74,7 @@ const HookUseReducer = () => {
             {task.text}
           </li>
         ))}
+        <hr/>
     </div>
   );
 };

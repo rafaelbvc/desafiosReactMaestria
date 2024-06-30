@@ -44,6 +44,7 @@ const HookUseRef = () => {
       </form>
       {Array.isArray(inputRef.current) &&
         inputRef.current.map((input, index) => <li key={index}>{input}</li>)}
+        <hr/>
     </div>
   );
 };

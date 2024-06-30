@@ -46,6 +46,7 @@ const HookUseEffect = () => {
       <button onClick={changeSomething}>Execute</button>
       <p>Number B: {numberB}</p>
       <button onClick={() => setNumberB(numberB + 1)}>Change Number B</button>
+      <hr/>
     </div>
   );
 };
