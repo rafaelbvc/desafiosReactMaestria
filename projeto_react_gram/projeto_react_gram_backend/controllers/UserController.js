@@ -5,6 +5,9 @@ const jwt = require("jsonwebtoken");
 
 const jwtSecret = process.env.JWT_SECRET;
 
+//custom
+let resMessage = "Usuário criado com sucesso!";
+
 const generateToken = (id) => {
   return jwt.sign({ id }, jwtSecret, {
     expiresIn: "7d",
@@ -37,9 +40,6 @@ const register = async (req, res) => {
     return;
   }
 
-  //custom
-  const resMessage = "Usuário criado com sucesso!";
-
   res.status(201).json({
     _id: newUser._id,
     token: generateToken(newUser._id),
@@ -48,8 +48,28 @@ const register = async (req, res) => {
   });
 };
 
-const login = (req, res) => {
-  res.send("Logado com sucesso!");
+const login = async (req, res) => {
+  const { email, password } = req.body;
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    res.status(404).json({ errors: ["Email ou senha inválidos."] });
+    return;
+  }
+
+  if (!(await bcrypt.compare(password, user.password))) {
+    res.status(422).json({ errors: ["Email ou senha inválidos."] });
+    return;
+  }
+
+  resMessage = "Usuário logado com sucesso.";
+
+  res.status(201).json({
+    _id: user._id,
+    profileImage: user.profileImage,
+    token: generateToken(user._id),
+    resMessage,
+  });
 };
 
 module.exports = { register, login };
